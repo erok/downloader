@@ -1,0 +1,16 @@
+[requires]
+glib/2.58.3@bincrafters/stable
+harfbuzz/2.4.0@bincrafters/stable
+libelf/0.8.13@bincrafters/stable
+libffi/3.2.1@bincrafters/stable
+libiconv/1.15@bincrafters/stable
+libjpeg/9c@bincrafters/stable
+libpng/1.6.37@bincrafters/stable
+libxml2/2.9.9@bincrafters/stable
+pcre/8.41@bincrafters/stable
+zlib/1.2.11@conan/stable
+bzip2/1.0.6@conan/stable
+qt/5.12.4@bincrafters/stable
+
+[generators]
+cmake
