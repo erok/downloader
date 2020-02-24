@@ -1,6 +1,8 @@
 #pragma once
 
+#include <QObject>
 #include <QFile>
+#include <QNetworkReply>
 
 class Writer : public QObject
 {
@@ -24,8 +26,9 @@ public:
     }
 
     [[nodiscard]] bool isInitialized() const { return m_file.isOpen(); }
+    [[nodiscard]] int64_t getSize() const { return m_file.size(); }
 
-    void writeChunck(const QByteArray & chunk);
+    void writeChunck(const QByteArray & chunk, int64_t pos);
 
 signals:
     void finished(FinishCode code);
@@ -33,3 +36,4 @@ signals:
 private:
     QFile m_file;
 };
+

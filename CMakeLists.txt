@@ -23,6 +23,7 @@ set(SRC_FILES
         src/main.cpp
         src/DownloadController.cpp
         src/Downloader/Writer.cpp
+        src/Downloader/ReplyWrapper.cpp
         src/Downloader/Downloader.cpp
         src/UI/DownloadDialog.cpp
         )

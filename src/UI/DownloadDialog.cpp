@@ -11,9 +11,10 @@ DownloadDialog::DownloadDialog(QWidget *parent)
 }
 
 void DownloadDialog::onProgress(qint64 received, quint64 total, quint64 timeElapsed) {
-    auto r = static_cast<double>(received);
-    auto t = static_cast<double>(total   );
-    m_ui->progressBar->setValue(static_cast<int>(r / t * 100));
+    m_ui->progressBar->setMaximum(total);
+    m_ui->progressBar->setValue(m_ui->progressBar->value() + received);
+    auto r = static_cast<double>(m_ui->progressBar->value());
+    auto t = static_cast<double>(total);
     const double speed = r / timeElapsed;
     const double msLeftD = (t - r) / speed;
     const int msLeft = static_cast<int>(msLeftD);

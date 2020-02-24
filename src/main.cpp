@@ -1,5 +1,4 @@
 #include <QApplication>
-#include <QTextCodec>
 
 #include "DownloadController.h"
 
