@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
 project(downloader)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 
 if(EXISTS ${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
     include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
@@ -19,6 +19,14 @@ set(CMAKE_AUTOUIC ON)
 
 find_package(Qt5 COMPONENTS Core Widgets Network REQUIRED)
 
-add_executable(downloader main.cpp)
+set(SRC_FILES
+        src/main.cpp
+        src/DownloadController.cpp
+        src/Downloader/Writer.cpp
+        src/Downloader/Downloader.cpp
+        src/UI/DownloadDialog.cpp
+        )
+
+add_executable(downloader ${SRC_FILES})
 
 target_link_libraries(downloader Qt5::Core Qt5::Widgets Qt5::Network)
