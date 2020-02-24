@@ -15,6 +15,7 @@ message(STATUS "Qt found in ${CONAN_QT_ROOT}")
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC ON)
 
 find_package(Qt5 COMPONENTS Core Widgets Network REQUIRED)
 
