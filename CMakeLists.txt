@@ -7,7 +7,7 @@ if(EXISTS ${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
     include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
     conan_basic_setup()
 else()
-    message(SEND_ERROR "The file conanbuildinfo.cmake doesn't exist, you have to run conan install first")
+    message(WARNING "The file conanbuildinfo.cmake doesn't exist, you have to run conan install first")
 endif()
 
 message(STATUS "Qt found in ${CONAN_QT_ROOT}")
